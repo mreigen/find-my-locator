@@ -1,4 +1,4 @@
-defmodule ElixirBoilerplate.GettextInterpolation do
+defmodule FindMyLocator.GettextInterpolation do
   @moduledoc """
   Default Gettext.Interpolation implementation for testing purposes
 

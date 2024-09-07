@@ -83,7 +83,7 @@ WORKDIR "/app"
 RUN chown nobody /app
 
 # Only copy the final release from the build stage
-COPY --from=otp-builder --chown=nobody:root /app/_build/prod/rel/elixir_boilerplate ./
+COPY --from=otp-builder --chown=nobody:root /app/_build/prod/rel/find_my_locator ./
 
 USER nobody
 

@@ -1,14 +1,14 @@
 import Config
-import ElixirBoilerplate.Config
+import FindMyLocator.Config
 
 canonical_uri = get_env("CANONICAL_URL", :uri)
 static_uri = get_env("STATIC_URL", :uri)
 
-config :elixir_boilerplate,
+config :find_my_locator,
   canonical_host: get_uri_part(canonical_uri, :host),
   force_ssl: get_uri_part(canonical_uri, :scheme) == "https"
 
-config :elixir_boilerplate, ElixirBoilerplate.Repo,
+config :find_my_locator, FindMyLocator.Repo,
   url: get_env!("DATABASE_URL"),
   ssl: get_env("DATABASE_SSL", :boolean),
   pool_size: get_env!("DATABASE_POOL_SIZE", :integer),
@@ -17,10 +17,10 @@ config :elixir_boilerplate, ElixirBoilerplate.Repo,
 # NOTE: Only set `server` to `true` if `PHX_SERVER` is present. We cannot set
 # it to `false` otherwise because `mix phx.server` will stop working without it.
 if get_env("PHX_SERVER", :boolean) == true do
-  config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint, server: true
+  config :find_my_locator, FindMyLocatorWeb.Endpoint, server: true
 end
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
+config :find_my_locator, FindMyLocatorWeb.Endpoint,
   http: [port: get_env!("PORT", :integer)],
   secret_key_base: get_env!("SECRET_KEY_BASE"),
   session_key: get_env!("SESSION_KEY"),
@@ -29,15 +29,15 @@ config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
   url: get_endpoint_url_config(canonical_uri),
   static_url: get_endpoint_url_config(static_uri)
 
-config :elixir_boilerplate, Corsica, origins: get_env("CORS_ALLOWED_ORIGINS", :cors)
+config :find_my_locator, Corsica, origins: get_env("CORS_ALLOWED_ORIGINS", :cors)
 
-config :elixir_boilerplate,
+config :find_my_locator,
   basic_auth: [
     username: get_env("BASIC_AUTH_USERNAME"),
     password: get_env("BASIC_AUTH_PASSWORD")
   ]
 
-config :elixir_boilerplate, ElixirBoilerplate.TelemetryUI, share_key: get_env("TELEMETRY_UI_SHARE_KEY")
+config :find_my_locator, FindMyLocator.TelemetryUI, share_key: get_env("TELEMETRY_UI_SHARE_KEY")
 
 config :sentry,
   dsn: get_env("SENTRY_DSN"),

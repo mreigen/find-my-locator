@@ -15,13 +15,13 @@ defmodule TestEnvironment do
   end
 end
 
-config :elixir_boilerplate, ElixirBoilerplate.Repo,
+config :find_my_locator, FindMyLocator.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   url: TestEnvironment.get_database_url()
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint, server: false
+config :find_my_locator, FindMyLocatorWeb.Endpoint, server: false
 
 # This config is to output keys instead of translated message in test
-config :elixir_boilerplate, ElixirBoilerplate.Gettext, priv: "priv/null", interpolation: ElixirBoilerplate.GettextInterpolation
+config :find_my_locator, FindMyLocator.Gettext, priv: "priv/null", interpolation: FindMyLocator.GettextInterpolation
 
 config :logger, level: :warning

@@ -1,23 +1,23 @@
 services:
   application:
-    image: elixir_boilerplate:0.0.1
-    container_name: elixir_boilerplate
+    image: find_my_locator:0.0.1
+    container_name: find_my_locator
     env_file: .env.dev
     environment:
-      - DATABASE_URL=postgres://postgres:development@postgresql/elixir_boilerplate_dev
+      - DATABASE_URL=postgres://postgres:development@postgresql/find_my_locator_dev
     ports:
       - 4000:4000
     depends_on:
       - postgresql
   postgresql:
     image: postgres:14-bookworm
-    container_name: elixir_boilerplate-postgres
+    container_name: find_my_locator-postgres
     environment:
-      - POSTGRES_DB=elixir_boilerplate_dev
+      - POSTGRES_DB=find_my_locator_dev
       - POSTGRES_PASSWORD=development
     ports:
       - 5432:5432
     volumes:
-      - elixir_boilerplate_psql:/var/lib/postgresql/data
+      - find_my_locator_psql:/var/lib/postgresql/data
 volumes:
-  elixir_boilerplate_psql:
+  find_my_locator_psql:

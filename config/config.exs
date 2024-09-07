@@ -2,28 +2,28 @@ import Config
 
 version = Mix.Project.config()[:version]
 
-config :elixir_boilerplate,
-  ecto_repos: [ElixirBoilerplate.Repo],
+config :find_my_locator,
+  ecto_repos: [FindMyLocator.Repo],
   version: version
 
 config :phoenix, :json_library, Jason
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
-  pubsub_server: ElixirBoilerplate.PubSub,
-  render_errors: [view: ElixirBoilerplateWeb.Errors, accepts: ~w(html json)]
+config :find_my_locator, FindMyLocatorWeb.Endpoint,
+  pubsub_server: FindMyLocator.PubSub,
+  render_errors: [view: FindMyLocatorWeb.Errors, accepts: ~w(html json)]
 
-config :elixir_boilerplate, ElixirBoilerplate.Repo,
+config :find_my_locator, FindMyLocator.Repo,
   migration_primary_key: [type: :binary_id, default: {:fragment, "gen_random_uuid()"}],
   migration_timestamps: [type: :utc_datetime_usec],
   start_apps_before_migration: [:ssl]
 
-config :elixir_boilerplate, Corsica, allow_headers: :all
+config :find_my_locator, Corsica, allow_headers: :all
 
-config :elixir_boilerplate, ElixirBoilerplate.Gettext, default_locale: "en"
+config :find_my_locator, FindMyLocator.Gettext, default_locale: "en"
 
-config :elixir_boilerplate, ElixirBoilerplateGraphQL, token_limit: 2000
+config :find_my_locator, FindMyLocatorGraphQL, token_limit: 2000
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Plugs.Security, allow_unsafe_scripts: false
+config :find_my_locator, FindMyLocatorWeb.Plugs.Security, allow_unsafe_scripts: false
 
 config :absinthe_security, AbsintheSecurity.Phase.MaxAliasesCheck, max_alias_count: 100
 config :absinthe_security, AbsintheSecurity.Phase.MaxDepthCheck, max_depth_count: 100

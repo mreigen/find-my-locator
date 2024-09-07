@@ -1,4 +1,4 @@
-defmodule ElixirBoilerplate.Repo.Migrations.AddTelemetryUiEventsTable do
+defmodule FindMyLocator.Repo.Migrations.AddTelemetryUiEventsTable do
   @moduledoc false
   use Ecto.Migration
 

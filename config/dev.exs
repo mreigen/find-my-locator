@@ -1,6 +1,6 @@
 import Config
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
+config :find_my_locator, FindMyLocatorWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   check_origin: false,
@@ -11,11 +11,11 @@ config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
     patterns: [
       ~r{priv/gettext/.*$},
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{lib/elixir_boilerplate_web/.*(ee?x)$}
+      ~r{lib/find_my_locator_web/.*(ee?x)$}
     ]
   ]
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Plugs.Security, allow_unsafe_scripts: true
+config :find_my_locator, FindMyLocatorWeb.Plugs.Security, allow_unsafe_scripts: true
 
 config :logger, :console, format: "[$level] $message\n"
 
